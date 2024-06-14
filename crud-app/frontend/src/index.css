@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+}
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+td,
+th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    position: relative;
+    padding-left: 45%;
+    text-align: left;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  td:nth-of-type(3) img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid gray;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Sr. : ";
+  }
+  td:nth-of-type(2):before {
+    content: "ID : ";
+  }
+  td:nth-of-type(3):before {
+    top: 20px;
+    content: "Avatar : ";
+  }
+  td:nth-of-type(4):before {
+    content: "First Name : ";
+  }
+  td:nth-of-type(5):before {
+    content: "Last Name : ";
+  }
+  td:nth-of-type(6):before {
+    content: "Email : ";
+    font-size: 16px;
+  }
+  td:nth-of-type(7):before {
+    content: "Gender : ";
+  }
+  td:nth-of-type(8):before {
+    content: "Domain : ";
+  }
+}
