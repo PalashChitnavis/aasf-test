@@ -14,6 +14,13 @@ const getUsers = async (req, res) => {
   const perPage = 20;
   const skip = parseInt(page || 0) * perPage;
   const users = await User.find(query).skip(skip).limit(perPage);
+  if (search) {
+    const searchUsers = await User.find({
+      $text: { $search: search, $caseSensitive: false },
+    });
+    res.send(searchUsers);
+    return;
+  }
   res.send(users);
 };
 
